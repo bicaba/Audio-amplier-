@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Madara Bi — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#7c3aed}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,-apple-system,'Helvetica Neue',Arial}
+    body{background:linear-gradient(180deg,#071022 0%, #07142a 60%);color:#e6eef8;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:1000px;margin:36px auto;padding:28px}
+    header{display:flex;align-items:center;gap:18px}
+    .avatar{width:84px;height:84px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#2dd4bf);display:flex;align-items:center;justify-content:center;font-weight:700;color:#02111a;box-shadow:0 6px 24px rgba(12,18,30,.6)}
+    h1{margin:0;font-size:26px}
+    p.lead{color:var(--muted);margin:6px 0 0}
+    nav{margin-top:18px;display:flex;gap:10px}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,.06);padding:8px 12px;border-radius:10px;color:inherit;text-decoration:none;font-weight:600}
+
+    main{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:18px;border-radius:14px;box-shadow:0 10px 30px rgba(2,6,23,.6);border:1px solid rgba(255,255,255,0.03)}
+    .projects{display:grid;gap:14px}
+
+    .project-card{display:flex;flex-direction:column;gap:10px;padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(124,58,237,0.06), transparent);border:1px solid rgba(124,58,237,0.12)}
+    .project-card h3{margin:0}
+    .meta{color:var(--muted);font-size:13px}
+    .techs{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{background:rgba(255,255,255,0.03);border-radius:8px;padding:6px 8px;font-size:12px;color:var(--muted)}
+    .actions{display:flex;gap:8px}
+    .primary{background:var(--accent);color:#021114;padding:8px 10px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    aside .card h4{margin-top:0}
+    footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
+
+    @media (max-width:900px){main{grid-template-columns:1fr} .avatar{width:68px;height:68px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="avatar">MB</div>
+      <div>
+        <h1>Madara Bi</h1>
+        <p class="lead">3rd-year Electrical Engineering student • Embedded systems, audio electronics, and projects</p>
+        <nav>
+          <a class="btn" href="#projects">Projects</a>
+          <a class="btn" href="#about">About</a>
+          <a class="btn" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="card">
+          <h2 id="projects">Selected Projects</h2>
+          <p class="meta">A curated list of my favourite builds and contributions. Click a project to view on GitHub or see details.</p>
+
+          <div class="projects">
+            <!-- Project: Audio-amplier from GitHub -->
+            <article class="project-card">
+              <div style="display:flex;justify-content:space-between;align-items:start">
+                <div>
+                  <h3>Audio-amplier</h3>
+                  <p class="meta">A personal audio amplifier project hosted on GitHub. Includes schematics, PCBs and code (if present in the repo).</p>
+                </div>
+                <div class="techs" aria-hidden>
+                  <span class="tag">Audio</span>
+                  <span class="tag">Electronics</span>
+                  <span class="tag">KiCad?</span>
+                </div>
+              </div>
+
+              <p style="margin:0;color:var(--muted)">Repository: <a href="https://github.com/bicaba/Audio-amplier" target="_blank" rel="noopener noreferrer">https://github.com/bicaba/Audio-amplier</a></p>
+
+              <div style="display:flex;gap:8px;margin-top:10px;align-items:center">
+                <a class="primary" href="https://github.com/bicaba/Audio-amplier" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                <a class="btn" href="#" onclick="showReadme(event)">Preview README</a>
+                <a class="btn" href="#" onclick="downloadZip(event)">Download ZIP</a>
+              </div>
+
+              <div id="readme-preview" style="margin-top:12px;display:none;border-radius:8px;padding:12px;background:rgba(0,0,0,0.25);color:var(--muted);font-size:14px">
+                <strong>README preview:</strong>
+                <div id="readme-content" style="margin-top:8px;white-space:pre-wrap"></div>
+              </div>
+            </article>
+
+            <!-- Add more project cards here -->
+
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h2 id="about">About</h2>
+          <p class="meta">I design and prototype electronic systems — from sensor boards to audio amplifiers. I'm the electrical lead at the uOttawa Autonomous Vehicle Club and currently studying electrical engineering.</p>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card">
+          <h4>Contact</h4>
+          <p class="meta">Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+          <h4 style="margin-top:14px">Quick links</h4>
+          <p style="margin:6px 0"><a class="btn" href="https://github.com/bicaba" target="_blank">GitHub</a> <a class="btn" href="#">LinkedIn</a></p>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h4>Tech stack</h4>
+          <div class="techs" style="margin-top:8px">
+            <span class="tag">C</span>
+            <span class="tag">C++</span>
+            <span class="tag">KiCad</span>
+            <span class="tag">MATLAB</span>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer id="contact">
+      <p>Want the README embedded automatically and a screenshot of the PCB? Reply and I will fetch the repo contents and include them in the page.</p>
+      <p>Made with ❤️ — modify this file as you like.</p>
+    </footer>
+  </div>
+
+  <script>
+    async function showReadme(e){
+      e.preventDefault();
+      const preview = document.getElementById('readme-preview');
+      const content = document.getElementById('readme-content');
+      if(preview.style.display === 'none'){
+        preview.style.display = 'block';
+        content.textContent = 'Unable to fetch README automatically from GitHub in this offline demo. To embed README text here, either paste it into the content or allow the site to call the GitHub API (server or CORS proxy required).';
+      } else { preview.style.display = 'none'; }
+    }
+
+    function downloadZip(e){
+      e.preventDefault();
+      // GitHub auto-zip link
+      window.open('https://github.com/bicaba/Audio-amplier/archive/refs/heads/main.zip', '_blank');
+    }
+  </script>
+</body>
+</html>
